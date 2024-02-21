@@ -24,10 +24,14 @@ JOBS = [{
     'Location': "Amaravathi, Andhra Pradesh, Manipal Hospitals"
 }]
 
-
+@app.route("/home")
+def home():
+  return render_template('home.html')
+  
 @app.route("/")
 def function():
-  return render_template('home.html', jobs=JOBS)
+  return render_template('index.html', jobs=JOBS)
+
 
 
 if __name__ == '__main__':
