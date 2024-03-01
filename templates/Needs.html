@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Us🔸Add a Need</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: antiquewhite;
+            margin-top: 7%;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background-color:darkgray;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            font-size: 28px;
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="tel"],
+        .form-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="lead">Add Your Emergency</h2>
+            <form action="/Needs" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="requirement_name">Requirement Name:</label>
+                    <input type="text" id="requirement_name" name="Requirement_name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient_name">Name:</label>
+                    <input type="text" id="patient_name" name="Patient_name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization_location">Organization Name with Location:</label>
+                    <input type="text" id="organization_location" name="Location" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_number">Contact Number:</label>
+                    <input type="tel" id="contact_number" name="Contact_number" class="form-control" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="proof_of_requirement">Proof of Requirement (OneDrive link):</label>
+                    <input type="text" id="proof_of_requirement" name="Proof" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

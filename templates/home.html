@@ -2,11 +2,12 @@
   <html>
     <head>
       <title>
-      Home ✨
+      Hand Us🔸Home
       </title>
       <style>
         #bodys{
-          margin-top:1%;
+          margin-top:5%;
+          background-color: antiquewhite;
         }
       </style>
       {%include 'bootstrap.html'%}
@@ -16,11 +17,13 @@
      {% include 'nav.html' %}
       <div class="container">
       <div>
-        <img class="img-fluid" id="banner" src ="static\banner.jpeg" height="1000">
-    <h1 class="text-center mt-2 mb-4"> Hand Us </h1>
-        <p class="lead">
-          In today's digital age, donating to causes and organizations has become easier than ever, thanks to the proliferation of online donation websites. However, with this convenience comes the responsibility of ensuring the safety and assurance of your contributions. When you decide to support a cause close to your heart, you want to be certain that your hard-earned money reaches its intended destination, making a real impact. That's where our donation website comes into play - a platform dedicated to providing you with a secure, reliable, and trustworthy avenue for your philanthropic endeavors.
-        </p>
+        <h3 class="text-center m4-2 mb-2"> Unveiling Hand Us. A Secure Donation Management System  </h3>
+        <p class="lead text-center">
+          Simplify Giving, Amplify Impact. Hand Us streamlines the donation process, connecting donors with causes they care about.
+          Where Compassion Meets Technology. Experience the power of digital giving with our innovative donation management system.
+           </p>
+        <img class="img-fluid" id="banner" src ="static\banner.jpg" height="1000">
+    
         <div id="about">
     <h2  class="text-center mt-4 mb-2 ">About </h2>  
         <p class="lead">
@@ -42,10 +45,26 @@
       <div class="alert alert-success" role="alert">
          <a href="{{url_for('donatepage')}}" class="alert-link">Raising Funds</a> Natural Disaster Occured in Kerala!!! Help them out
       </div>
-      <div class="text-center mb-4 mt-3">
+      <div class=" mb-4 mt-3">
       <a href="{{url_for('donatepage')}}" class="btn btn-primary active" role="button" aria-pressed="true">Donate</a>
       </div>
       </div>
+<div>
+  <h2 class="text-center mt-2">
+     Add An Emergency !!!
+  </h2>
+  <p class="lead">
+    Tell us about your need. Whether it's medical expenses, educational support, community projects, or any other cause, 
+    share the details of what you require assistance with. Your description will help potential donors understand the
+     impact of their contribution and how it can make a difference in your life or your cause.
+  </p>
+  <div class="text-center">
+  <a href="{{url_for('Needs')}}" class=" mb-4 btn btn-warning active" role="button" aria-pressed="true">Add a Need</a>
+      </div>
+</div>
+
+
+
         {%include 'footer.html'%}
     </div>
     </body>
