@@ -15,7 +15,7 @@ def home():
 def function():
   return render_template('index.html')
 
-@app.route('/donatepage')
+@app.route('/donatepage', method=['post','get'])
 def donatepage():
   return render_template('donatepage.html')
 
