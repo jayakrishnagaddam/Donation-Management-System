@@ -1,13 +1,49 @@
-<doctype html>
-    <html>
-        <head>
-            <title>
-                 Help out
-            </title>
-{%include 'bootstrap.html'%}
-        </head>
-        <body>
-<h1>Hello There</h1>
-        </body>
-    </html>
-</doctype>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Page</title>
+    {%include 'bootstrap.html'%}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+        #bodys{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body id="bodys" class="container">
+    <h1 class="text-center mt-2 mb-2">Help Needed</h1>
+
+<div>
+    {% for reqs in Emergency %}
+    <div class="card">
+        <h2>Requirement Name: {{reqs.Requirement_name}}</h2>
+        <p><strong>Location:</strong> {{ reqs.Location }}</p>
+        <p><strong>Contact Number:</strong> {{ reqs.Contact_number }}</p>
+        <p><strong>Patient Name:</strong> {{ reqs.Patient_name }}</p>
+        <p><strong>Priority:</strong> {{ reqs.Priority }}</p>
+        <!-- Bootstrap Buttons -->
+        <div class="text-center">
+            <button type="button" class="btn btn-primary mr-2">Donate</button>
+            <button type="button" class="btn btn-secondary">Details</button>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Bootstrap JS and JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</div>
+</body>
+</html>
