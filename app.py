@@ -34,19 +34,21 @@ def Needs():
         contact_number = request.form['Contact_number']
         proof_of_requirement = request.form['Proof']
         
-        # Save proof_of_requirement to a folder or cloud storage and get its URL
-        
-        # Insert the data into MongoDB
+       
         mongo.db.Needs.insert_one({
             'requirement_name': requirement_name,
             'patient_name': patient_name,
             'organization_location': organization_location,
             'contact_number': contact_number,
-            'proof_of_requirement': proof_of_requirement  # You can replace this with the URL
+            'proof_of_requirement': proof_of_requirement  
         })
-        return redirect(url_for('donatepage'))
+        return redirect(url_for('Received'))
         
     return render_template('Needs.html')
+
+@app.route('/Received')
+def Received():
+    return render_template('Received.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
