@@ -11,6 +11,7 @@
     <style>
         #bodys{
             font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color:aliceblue;
         }
         .card {
             border: 1px solid #ccc;
@@ -29,9 +30,13 @@
         <h2>Requirement Name: {{reqs.Requirement_name}}</h2>
         <p><strong>Location:</strong> {{ reqs.Location }}</p>
         <p><strong>Contact Number:</strong> {{ reqs.Contact_number }}</p>
+        {% if reqs.Patient_name %}
         <p><strong>Patient Name:</strong> {{ reqs.Patient_name }}</p>
+        {% else %}
+        <p><strong>Patient Name:</strong> Unknown</p>
+        {% endif %}
         <p><strong>Priority:</strong> {{ reqs.Priority }}</p>
-        <!-- Bootstrap Buttons -->
+        
         <div class="text-center">
             <button type="button" class="btn btn-primary mr-2">Donate</button>
             <button type="button" class="btn btn-secondary">Details</button>
@@ -39,11 +44,11 @@
     </div>
     {% endfor %}
 
-    <!-- Bootstrap JS and JQuery -->
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+{%include 'footer.html'%}
 </div>
 </body>
 </html>
