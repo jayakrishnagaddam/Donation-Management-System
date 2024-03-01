@@ -2,7 +2,7 @@
   <html>
     <head>
       <title>
-      Donate ✨
+      Home ✨
       </title>
       {%include 'bootstrap.html'%}
       {% include 'style.css'%}
@@ -16,20 +16,30 @@
         <p class="lead">
           In today's digital age, donating to causes and organizations has become easier than ever, thanks to the proliferation of online donation websites. However, with this convenience comes the responsibility of ensuring the safety and assurance of your contributions. When you decide to support a cause close to your heart, you want to be certain that your hard-earned money reaches its intended destination, making a real impact. That's where our donation website comes into play - a platform dedicated to providing you with a secure, reliable, and trustworthy avenue for your philanthropic endeavors.
         </p>
-    <h2 class="text-center mt-4 mb-2 ">About Hand Us</h2>  
+        <div id="about">
+    <h2  class="text-center mt-4 mb-2 ">About </h2>  
         <p class="lead">
           When it comes to donating, trust and security are paramount. Our donation website is committed to providing a safe and trustworthy environment for your contributions. By choosing to give through us, you're not only supporting causes you're passionate about but also ensuring that your generosity has a meaningful impact.
 
           Join us in making a difference. Start your journey with our donation platform today, knowing that your kindness will be both safe and impactful. Together, we can change the world, one donation at a time.
         </p>
-      <h3 class="text-center mt-2 mb-4">Help Needed</h3>
-        <div> 
-          {% for job in jobs %}
-          {%include 'jobitem.html'%}
-          {% endfor %}
         </div>
-        <div class="text-center">
-      <a href='https://www.google.com' class="btn btn-primary">Contact Us!</a>
+
+        <div id="requirements">
+      <h3 class="text-center mt-2 mb-4">Help Needed</h3>
+        
+      <div class="alert alert-primary" role="alert">
+          <a href="{{url_for('donatepage')}}" class="alert-link">Blood Needed</a>. A Patient is in the need of blood.
+      </div>
+      <div class="alert alert-secondary" role="alert">
+        <a href="{{url_for('donatepage')}}" class="alert-link">Raising Funds</a> Cancer Patient needs Financial Support
+      </div>
+      <div class="alert alert-success" role="alert">
+         <a href="{{url_for('donatepage')}}" class="alert-link">Raising Funds</a> Natural Disaster Occured in Kerala!!! Help the out
+      </div>
+      <div class="text-center mb-4 mt-3">
+      <a href="{{url_for('donatepage')}}" class="btn btn-primary active" role="button" aria-pressed="true">Donate</a>
+      </div>
       </div>
         {%include 'footer.html'%}
     </div>
