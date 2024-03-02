@@ -4,58 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details Page</title>
-    {%include 'bootstrap.html'%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color:antiquewhite;
             padding: 20px;
         }
         .details-container {
-            max-width: 600px;
-            margin: 0 auto;
             background-color: #fff;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        h2 {
+            margin-bottom: 30px;
             color: #333;
-            margin-bottom: 15px;
+        }
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
         }
         p {
-            margin-bottom: 10px;
+            color: #555;
+            margin-bottom: 20px;
         }
         .no-data-message {
             color: red;
             text-align: center;
             margin-top: 20px;
         }
+        .btn-back {
+            margin-top: 30px;
+        }
     </style>
-   
 </head>
 <body>
-    <div class="details-container">
-        <h1>Details</h1>
-        {% if data %}
-            <h3>First Name: {{ data.first_name }}</h3>
-            <p>Last Name: {{ data.last_name }}</p>
-            <p>Age:{{data.age}}</p>
-            <p>Proof of ID: {{data.id1}}</p>
-            <p>Contact Number: {{ contact_number }}</p>
-            <p>Contact Number 2: {{data.contact_number2}}</p>
-            <p>Organization Location: {{ data.organization_location}}</p>
-           <p>Proof of Need: {{ data.proof_of_requirement}}</p>
-           <p>Description:{{data.description}}</p>
-           
-            
-        {% else %}
-            <p class="no-data-message">No data found for the provided contact number.</p>
-        {% endif %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="details-container">
+                    <h1>Details</h1>
+                    {% if data %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>First Name:</h3>
+                                <p>{{ data.first_name }}</p>
+                                <h3>Last Name:</h3>
+                                <p>{{ data.last_name }}</p>
+                                <h3>Age:</h3>
+                                <p>{{ data.age }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Proof of ID:</h3>
+                                <p>{{ data.id1 }}</p>
+                                <h3>Contact Number:</h3>
+                                <p>{{ contact_number }}</p>
+                                <h3>Contact Number 2:</h3>
+                                <p>{{ data.contact_number2 }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Organization Location:</h3>
+                                <p>{{ data.organization_location }}</p>
+                                <h3>Proof of Need:</h3>
+                                <p>{{ data.proof_of_requirement }}</p>
+                                <h3>Description:</h3>
+                                <p>{{ data.description }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="no-data-message">No data found for the provided contact number.</p>
+                    {% endif %}
+                    <a href="{{url_for('donatepage')}}" class="btn btn-primary btn-block btn-back">Back</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

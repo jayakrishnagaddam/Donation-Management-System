@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Page - List View</title>
+    <title>Hand Us🔸Donate ae</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         #bodys {
@@ -61,7 +61,7 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
-            background-color: #fff;
+            background-color: #fff !important;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: box-shadow 0.3s ease;
         }
@@ -107,6 +107,9 @@
             background-color: #218838;
             border-color: #218838;
         }
+        #bodys{
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body id="bodys" class="container">
@@ -127,7 +130,9 @@
                 </div>
                 <div class="text-center">
                     <a href="transaction" class="btn btn-donate" role="button">Donate</a>
-                    <a href="{{ url_for('details', contact_number=reqs.Contact_number) }}" class="btn btn-details" role="button">Details</a>
+                    
+                   
+<a href="{{ url_for('details', contact_number=reqs.Contact_number) }}" class="btn btn-details" role="button">Details</a>
 
                 </div>
             </div>
