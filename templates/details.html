@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    {%include 'bootstrap.html'%}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .details-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .no-data-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="details-container">
+        <h1>Details</h1>
+        {% if data %}
+            <h3>Requirement Name: {{ data.requirement_name }}</h3>
+            <p>Name: {{ data.patient_name }}</p>
+            <p>Contact Number: {{ contact_number }}</p>
+            <p>Organization Location: {{ data.organization_location }}</p>
+           <p>Proof of Need: {{ data.proof_of_requirement}}</p>
+            
+        {% else %}
+            <p class="no-data-message">No data found for the provided contact number.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

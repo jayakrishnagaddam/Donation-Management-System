@@ -24,7 +24,6 @@ def donatepage():
 def contact():
     return render_template('contactus.html')
 
-
 @app.route('/Needs', methods=['POST','GET'])
 def Needs():
     if request.method == 'POST':
@@ -34,7 +33,6 @@ def Needs():
         contact_number = request.form['Contact_number']
         proof_of_requirement = request.form['Proof']
         
-       
         mongo.db.Needs.insert_one({
             'requirement_name': requirement_name,
             'patient_name': patient_name,
@@ -49,6 +47,20 @@ def Needs():
 @app.route('/Received')
 def Received():
     return render_template('Received.html')
+
+@app.route('/transaction')
+def transaction():
+    return render_template('transaction.html')
+
+# Inside app.py
+@app.route('/details')
+def details():
+    contact_number = request.args.get('contact_number')
+    data = mongo.db.Needs.find_one({'contact_number': contact_number})
+    if data:
+        return render_template('details.html', contact_number=contact_number, data=data)
+    else:
+        return "No data found for the provided contact number"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
