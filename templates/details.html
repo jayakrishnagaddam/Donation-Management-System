@@ -43,14 +43,14 @@
         <h1>Details</h1>
         {% if data %}
             <h3>First Name: {{ data.first_name }}</h3>
-            <p>Last Name: {{ data.Last_name }}</p>
+            <p>Last Name: {{ data.last_name }}</p>
             <p>Age:{{data.age}}</p>
             <p>Proof of ID: {{data.id1}}</p>
             <p>Contact Number: {{ contact_number }}</p>
             <p>Contact Number 2: {{data.contact_number2}}</p>
-            <p>Organization Location: {{ data.location }}</p>
+            <p>Organization Location: {{ data.organization_location}}</p>
            <p>Proof of Need: {{ data.proof_of_requirement}}</p>
-           
+           <p>Description:{{data.description}}</p>
            
             
         {% else %}
