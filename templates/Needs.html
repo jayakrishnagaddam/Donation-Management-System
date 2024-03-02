@@ -71,49 +71,49 @@
     <div class="container">
         <div class="form-container">
             <h2>Add Your Emergency</h2>
-            <form id="needs-form" action="/submit_needs" method="post" enctype="multipart/form-data">
+            <form id="needs-form"  method='POST'>
                 
                 <div class="form-group">
-                    <label for="patient_name">First Name:</label>
-                    <input type="text" id="patient_first_name" name="patient_first_name" class="form-control" required>
+                    <label for="First_name">First Name:</label>
+                    <input type="text" id="First_name" name="First_name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="patient_name">Last Name:</label>
-                    <input type="text" id="patient_last_name" name="patient_last_name" class="form-control" required>
+                    <label for="Last_name">Last Name:</label>
+                    <input type="text" id="Last_name" name="Last_name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="patient_name"> Age:</label>
-                    <input type="number" id="patient_age" name="patient_age" class="form-control" required>
+                    <label for="Age"> Age:</label>
+                    <input type="number" id="Age" name="Age" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="organization_location">Organization Name with Location:</label>
-                    <input type="text" id="organization_location" name="organization_location" class="form-control" required>
+                    <label for="Location">Organization Name with Location:</label>
+                    <input type="text" id="Location" name="Location" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="contact_number">Contact Number:</label>
-                    <input type="tel" id="contact_number" name="contact_number" class="form-control" pattern="[0-9]{10}" required>
+                    <label for="Contact_number1">Contact Number:</label>
+                    <input type="tel" id="Contact_number" name="Contact_number" class="form-control" pattern="[0-9]{10}" required>
                 </div>
                 <div class="form-group">
-                    <label for="contact_number_2">Alternate Contact Number:</label>
-                    <input type="tel" id="contact_number_2" name="contact_number_2" class="form-control" pattern="[0-9]{10}">
+                    <label for="Contact_number2">Alternate Contact Number:</label>
+                    <input type="tel" id="contact_number2" name="Contact_number2" class="form-control" pattern="[0-9]{10}">
                 </div>
                 <div class="form-group">
-                    <label for="proof_of_identification">Proof of Identification (OneDrive link):</label>
-                    <input type="url" id="proof_of_identification" name="proof_of_identification" class="form-control" required>
+                    <label for="Id1">Proof of Identification (OneDrive link):</label>
+                    <input type="url" id="Id1" name="Id1" class="form-control" required>
                     <p>Upload a document/photo showing identification (e.g., ID card, passport).</p>
                 </div>
                 <div class="form-group">
-                    <label for="requirement_name">Requirement Name:</label>
-                    <input type="text" id="requirement_name" name="requirement_name" class="form-control" required>
+                    <label for="Requirement_name">Requirement Name:</label>
+                    <input type="text" id="Requirement_name" name="Requirement_name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="proof_of_requirement">Proof of Requirement (OneDrive link):</label>
-                    <input type="url" id="proof_of_requirement" name="proof_of_requirement" class="form-control" required>
+                    <label for="Id2">Proof of Requirement (OneDrive link):</label>
+                    <input type="url" id="Id2" name="Id2" class="form-control" required>
                     <p>Upload a document/photo showing the requirement (e.g., medical prescription, appointment letter).</p>
                 </div>
                 <div class="form-group">
-                    <label for="description">Problem Description:</label>
-                    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+                    <label for="Description">Problem Description:</label>
+                    <textarea id="Description" name="Description" class="form-control" rows="4" required></textarea>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Submit" class="btn btn-primary">

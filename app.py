@@ -6,7 +6,6 @@ app.config['SECRET_KEY'] = "1234"
 app.config['MONGO_URI'] = "mongodb+srv://2100090162:manigaddam@deepsheild.kzgpo9p.mongodb.net/Donations"
 
 mongo = PyMongo(app)
-
 @app.route("/home")
 def home():
     return render_template('home.html')
@@ -27,18 +26,29 @@ def contact():
 @app.route('/Needs', methods=['POST','GET'])
 def Needs():
     if request.method == 'POST':
+        first_name=request.form['First_name']
+        last_name=request.form['Last_name']
+        age=request.form['Age']
+        contact_number=request.form['Contact_number']
+        contact_number2=request.form['Contact_number2']
         requirement_name = request.form['Requirement_name']
-        patient_name = request.form['Patient_name']
+        id1=request.form['Id1']
+        proof_of_requirement=request.form['Id2']
         organization_location = request.form['Location']
-        contact_number = request.form['Contact_number']
-        proof_of_requirement = request.form['Proof']
-        
+        description=request.form['Description']
+
+
         mongo.db.Needs.insert_one({
+            'first_name':first_name,
+            'last_name':last_name,
+            'age':age,
+            'id1':id1,
             'requirement_name': requirement_name,
-            'patient_name': patient_name,
             'organization_location': organization_location,
             'contact_number': contact_number,
-            'proof_of_requirement': proof_of_requirement  
+            'contact_number2':contact_number2,
+            'proof_of_requirement': proof_of_requirement,
+            'description':description
         })
         return redirect(url_for('Received'))
         
