@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: antiquewhite;
-            margin-top: 7%;
+            background-image: url('static/needsbg.jpg');
+            background-size: cover;
+            padding-top: 1%;
+            
         }
         .form-container {
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
-            background-color:darkgray;
-            padding: 20px;
+            background-color: #fff;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .form-container h2 {
             text-align: center;
-            font-size: 28px;
+            font-size: 24px;
+            margin-bottom: 30px;
         }
         .form-container label {
             font-weight: bold;
         }
         .form-container input[type="text"],
         .form-container input[type="tel"],
-        .form-container input[type="file"] {
+        .form-container input[type="file"],
+        .form-container input[type="url"],
+        .form-container textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #ced4da;
             border-radius: 5px;
             box-sizing: border-box;
         }
@@ -42,43 +47,94 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .form-container input[type="submit"]:hover {
             background-color: #0056b3;
+        }
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+        .form-container p {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .form-container .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="form-container">
-            <h2 class="lead">Add Your Emergency</h2>
-            <form action="/Needs" method="post" enctype="multipart/form-data">
+            <h2>Add Your Emergency</h2>
+            <form id="needs-form" action="/submit_needs" method="post" enctype="multipart/form-data">
+                
                 <div class="form-group">
-                    <label for="requirement_name">Requirement Name:</label>
-                    <input type="text" id="requirement_name" name="Requirement_name" class="form-control" required>
+                    <label for="patient_name">First Name:</label>
+                    <input type="text" id="patient_first_name" name="patient_first_name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="patient_name">Name:</label>
-                    <input type="text" id="patient_name" name="Patient_name" class="form-control" required>
+                    <label for="patient_name">Last Name:</label>
+                    <input type="text" id="patient_last_name" name="patient_last_name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient_name"> Age:</label>
+                    <input type="number" id="patient_age" name="patient_age" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="organization_location">Organization Name with Location:</label>
-                    <input type="text" id="organization_location" name="Location" class="form-control" required>
+                    <input type="text" id="organization_location" name="organization_location" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="contact_number">Contact Number:</label>
-                    <input type="tel" id="contact_number" name="Contact_number" class="form-control" pattern="[0-9]{10}" required>
+                    <input type="tel" id="contact_number" name="contact_number" class="form-control" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_number_2">Alternate Contact Number:</label>
+                    <input type="tel" id="contact_number_2" name="contact_number_2" class="form-control" pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="proof_of_identification">Proof of Identification (OneDrive link):</label>
+                    <input type="url" id="proof_of_identification" name="proof_of_identification" class="form-control" required>
+                    <p>Upload a document/photo showing identification (e.g., ID card, passport).</p>
+                </div>
+                <div class="form-group">
+                    <label for="requirement_name">Requirement Name:</label>
+                    <input type="text" id="requirement_name" name="requirement_name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="proof_of_requirement">Proof of Requirement (OneDrive link):</label>
-                    <input type="text" id="proof_of_requirement" name="Proof" class="form-control" required>
+                    <input type="url" id="proof_of_requirement" name="proof_of_requirement" class="form-control" required>
+                    <p>Upload a document/photo showing the requirement (e.g., medical prescription, appointment letter).</p>
                 </div>
-                
+                <div class="form-group">
+                    <label for="description">Problem Description:</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+                </div>
                 <div class="form-group">
                     <input type="submit" value="Submit" class="btn btn-primary">
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        // Form submission handling with client-side validation
+        document.getElementById('needs-form').addEventListener('submit', function(event) {
+            var form = event.target;
+
+            // Check if form is valid
+            if (!form.checkValidity()) {
+                event.preventDefault(); // Prevent form submission if not valid
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated'); // Add 'was-validated' class to enable styling for :invalid inputs
+        });
+    </script>
 </body>
 </html>
