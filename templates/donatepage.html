@@ -122,7 +122,7 @@
                 <h2>{{ reqs.Requirement_name }}</h2>
                 <p><strong>Location:</strong> {{ reqs.Location }}</p>
                 <p><strong>Contact Number:</strong> {{ reqs.Contact_number }}</p>
-                <p><strong>Name:</strong> {% if reqs.Patient_name %}{{ reqs.Patient_name }}{% else %}Unknown{% endif %}</p>
+                <p><strong>Name:</strong> {% if reqs.First_name %}{{ reqs.First_name }}{% else %}Unknown{% endif %}</p>
                 <p><strong>Priority:</strong> {{ reqs.Priority }}</p>
                  <p class="progress-title"> <strong>Funds Received : </strong><span>50</span>%</p>
                 <div class="progress">
@@ -132,7 +132,7 @@
                     <a href="transaction" class="btn btn-donate" role="button">Donate</a>
                     
                    
-<a href="{{ url_for('details', contact_number=reqs.Contact_number) }}" class="btn btn-details" role="button">Details</a>
+<a href="{{ url_for('details', Contact_number=reqs.Contact_number) }}" class="btn btn-details" role="button">Details</a>
 
                 </div>
             </div>

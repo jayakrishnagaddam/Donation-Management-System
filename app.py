@@ -39,16 +39,16 @@ def Needs():
 
 
         mongo.db.Needs.insert_one({
-            'first_name':first_name,
-            'last_name':last_name,
-            'age':age,
-            'id1':id1,
-            'requirement_name': requirement_name,
-            'organization_location': organization_location,
-            'contact_number': contact_number,
-            'contact_number2':contact_number2,
-            'proof_of_requirement': proof_of_requirement,
-            'description':description
+            'First_name':first_name,
+            'Last_name':last_name,
+            'Age':age,
+            'Id1':id1,
+            'Requirement_name': requirement_name,
+            'Location': organization_location,
+            'Contact_number': contact_number,
+            'Contact_number2':contact_number2,
+            'Proof_of_requirement': proof_of_requirement,
+            'Description':description
         })
         return redirect(url_for('Received'))
         
@@ -65,10 +65,10 @@ def transaction():
 # Inside app.py
 @app.route('/details')
 def details():
-    contact_number = request.args.get('contact_number')
-    data = mongo.db.Needs.find_one({'contact_number': contact_number})
+    contact_number = request.args.get('Contact_number')
+    data = mongo.db.Needs.find_one({'Contact_number': contact_number})
     if data:
-        return render_template('details.html', contact_number=contact_number, data=data)
+        return render_template('details.html',Contact_number=contact_number, data=data)
     else:
         return "No data found for the provided contact number"
 
