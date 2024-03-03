@@ -120,9 +120,9 @@
         <div class="col-md-6">
             <div class="item">
                 <h2>{{ reqs.Requirement_name }}</h2>
-                <p><strong>Location:</strong> {{ reqs.Location }}</p>
-                <p><strong>Contact Number:</strong> {{ reqs.Contact_number }}</p>
                 <p><strong>Name:</strong> {% if reqs.First_name %}{{ reqs.First_name }}{% else %}Unknown{% endif %}</p>
+                <p><strong>Contact Number:</strong> {{ reqs.Contact_number }}</p>
+                <p><strong>Location:</strong> {{ reqs.Location }}</p>
                 <p><strong>Priority:</strong> {{ reqs.Priority }}</p>
                  <p class="progress-title"> <strong>Funds Received : </strong><span>50</span>%</p>
                 <div class="progress">
@@ -139,7 +139,9 @@
         </div>
         {% endfor %}
     </div>
-
+    <div>
+        <a class="btn btn-primary text-center" style="text-decoration: none;"href="home">Go Home</a></div>
+ 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
